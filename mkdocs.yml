@@ -1,0 +1,31 @@
+site_name: Peripatetika
+theme: 
+  name: material
+  language: hr
+  palette:
+    # Dark mode
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Dark mode
+      primary: deep orange
+      accent: deep purple
+    # Light mode
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch
+        name: Light mode
+      primary: blue
+      accent: deep purple    
+plugins:
+  - search
+  - blog:
+      blog_dir: .
+      archive_date_format: MM/yyyy
+      archive_url_date_format: MM/yyyy
+      post_url_format: "{slug}"
+  - tags:
+      tags_file: tags.md
+
+copyright: 'Copyright &copy; 2025 Peripatetika Team. Contents licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-BY-NC-SA 4.0</a>.'
+     
