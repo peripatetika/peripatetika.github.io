@@ -1,5 +1,5 @@
 ---
-title: "Početna stranica" 
+title: "Početna" 
 ---
 
 # Dobrodošli

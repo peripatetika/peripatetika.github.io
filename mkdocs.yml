@@ -19,6 +19,8 @@ theme:
         name: Tamni način rada
       primary: indigo
       accent: deep purple    
+  # features:
+  #   - navigation.tabs    
 plugins:
   - search
   - blog:
