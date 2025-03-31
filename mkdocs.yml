@@ -2,20 +2,22 @@ site_name: Peripatetika
 theme: 
   name: material
   language: hr
+  icon:
+    logo: material/pi-box
   palette:
     # Dark mode
     - scheme: slate 
       toggle:
-        icon: material/toggle-switch
-        name: Dark mode
-      primary: deep orange
+        icon: material/lightbulb-outline
+        name: Svijetli način rada
+      primary: indigo
       accent: deep purple
     # Light mode
     - scheme: default
       toggle:
-        icon: material/toggle-switch
-        name: Light mode
-      primary: blue
+        icon: material/lightbulb
+        name: Tamni način rada
+      primary: indigo
       accent: deep purple    
 plugins:
   - search
