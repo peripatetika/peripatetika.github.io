@@ -30,6 +30,13 @@ plugins:
       post_url_format: "{slug}"
   - tags:
       tags_file: tags.md
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
 
 copyright: 'Copyright &copy; 2025 Peripatetika Team. Contents licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-BY-NC-SA 4.0</a>.'
      
