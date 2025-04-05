@@ -2,6 +2,6 @@
 title: "Početna" 
 ---
 
-# Dobrodošli u svijet ideja :bulb:
+# Dobrodošli!
 
 > *Razgovori koji izazivaju, misli koje oblikuju, pitanja koja ostaju.*
