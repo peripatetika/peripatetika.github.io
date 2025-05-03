@@ -6,6 +6,14 @@ theme:
   icon:
     logo: material/pi-box
   palette:
+    # Light mode
+    - scheme: default
+      media: false
+      toggle:
+        icon: material/lightbulb
+        name: Tamni način rada
+      primary: indigo
+      accent: deep purple   
     # Dark mode
     - scheme: slate 
       toggle:
@@ -13,13 +21,6 @@ theme:
         name: Svijetli način rada
       primary: indigo
       accent: deep purple
-    # Light mode
-    - scheme: default
-      toggle:
-        icon: material/lightbulb
-        name: Tamni način rada
-      primary: indigo
-      accent: deep purple    
   # features:
   #   - navigation.tabs    
 plugins:
