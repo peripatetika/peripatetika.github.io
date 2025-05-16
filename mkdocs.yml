@@ -8,7 +8,6 @@ theme:
   palette:
     # Light mode
     - scheme: default
-      media: false
       toggle:
         icon: material/lightbulb
         name: Tamni način rada
@@ -38,7 +37,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:pymdownx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
-
+extra_javascript:
+  - javascripts/force-light-mode.js
 
 copyright: 'Copyright &copy; 2025 Peripatetika Team. Contents licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-BY-NC-SA 4.0</a>.'
      
