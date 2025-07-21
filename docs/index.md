@@ -8,20 +8,14 @@ title: "Početna"
 
 Ovdje ne nudimo gotove odgovore, ali postavljamo pitanja s guštom. Pišemo o svemu što nas zaokuplja sa strane – filozofiji, znanosti, ekonomiji, religiji, svakodnevici – kako nam dođe, bez pretenzija i bez skripti.
 
-Želite li podržati naš rad, počastite nas kavom! :coffee:
-To možete učiniti klikom na [link](https://buymeacoffee.com/peripatetika) ili skeniranjem QR koda:
+<div class="grid cards" markdown>
 
-<div class="center-image">
-    <img src="images/bmc_qr.png" alt="QR kod">
+- 
+  <br>
+  Želite li podržati naš rad, počastite nas kavom! :coffee: <br>
+  To možete učiniti klikom na [link](https://buymeacoffee.com/peripatetika) ili skeniranjem QR koda.
+
+- 
+  ![QR kod](images/bmc_qr.png){ style="max-width: 60%; display: block; margin: 0 auto;" }
+
 </div>
-
-<style>
-.center-image {
-    text-align: center;
-}
-
-.center-image img {
-    max-width: 15%;
-    height: auto;
-}
-</style>
