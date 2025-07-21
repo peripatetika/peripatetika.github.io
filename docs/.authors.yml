@@ -6,4 +6,8 @@ authors:
   filip: 
     name: Filip Reščić
     description: Osnivač
-    avatar: https://github.com/squidfunk.png  
+    avatar: avatari/cp_avatar.jpg
+  team:
+    name: Peripatetika Team
+    description: Tim Peripatetike
+    avatar: avatari/bullseye.jpg   

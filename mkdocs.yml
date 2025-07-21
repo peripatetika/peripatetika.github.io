@@ -3,8 +3,8 @@ site_url: https://peripatetika.com
 theme: 
   name: material
   language: hr
-  icon:
-    logo: material/pi-box
+  favicon: images/favicon.png
+  logo: images/favicon.png
   palette:
     # Light mode
     - scheme: default
@@ -29,8 +29,8 @@ plugins:
       archive_date_format: MM/yyyy
       archive_url_date_format: MM/yyyy
       post_url_format: "{slug}"
-  - tags:
-      tags_file: tags.md
+  # - tags:
+  #     tags_file: tags.md
 markdown_extensions:
   - attr_list
   - md_in_html
