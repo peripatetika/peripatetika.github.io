@@ -29,8 +29,7 @@ plugins:
       archive_date_format: MM/yyyy
       archive_url_date_format: MM/yyyy
       post_url_format: "{slug}"
-  # - tags:
-  #     tags_file: tags.md
+  - tags
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -39,8 +38,8 @@ markdown_extensions:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
 extra_javascript:
   - javascripts/force-light-mode.js
-# extra_css:
-#   - stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
 
 copyright: 'Copyright &copy; 2025 Peripatetika Team. Contents licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-BY-NC-SA 4.0</a>.'
      
