@@ -12,6 +12,12 @@ slug: par-rijeci-o-determinizmu
 
 # Par riječi o determinizmu
 
+---
+
+![Naslovna](../images/newton_njihalo.jpg)
+
+---
+
 Kada bi determinizam bio vladajući princip kozmosa, onda bi nam se kompleksni događaji, u odsutnosti otkrivenih socioloških zakona, činili nasumičnima.
 
 <!-- more -->
@@ -28,3 +34,7 @@ Naravno, mogli bismo jednostavno reći da čovjek, ili koji drugi organizam, nij
 
 Ali zašto bi bili izopćeni?
 Naravno, u slučaju čovjeka, odgovor je očit - opstanak vrste. Nakon što smo se odvojili od pretka zajedničkog s ostalim velikim primatima, i nakon povlačenja prašuma, ispalo je da je budući Homo sapiens izvukao kratku slamku u pogledu fizičke spreme. Šume je bilo sve manje, i naši su preci istjerani u preriju gdje su bili laka meta predatora: grabežljivih pasa, mačaka i ptica. Naša je snaga bila u brojevima. Naš se mozak razvijao i rastao upravo kako bi bio u stanju zapamtiti, prepoznati i dešifrirati lica ljudi koji su pripadali istom jatu – prijatelja. S većim mozgom došla je i sposobnost kompleksne komunikacije, no uvijek u funkciji adekvatnije socijalizacije. U svijetu u kojem je vuk bio čovjeku vuk, čovjek je čovjeku morao biti podrška.
+
+---
+
+Izvor naslovne slike: [publicdomainpictures.net](https://www.publicdomainpictures.net/en/view-image.php?image=215748&picture=newtonamps-cradle).
