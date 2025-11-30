@@ -20,8 +20,8 @@ theme:
         name: Svijetli način rada
       primary: indigo
       accent: deep purple
-  # features:
-  #   - navigation.tabs    
+  features:
+    - content.social_cards  
 plugins:
   - search
   - blog:
