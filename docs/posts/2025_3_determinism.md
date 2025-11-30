@@ -12,8 +12,6 @@ slug: par-rijeci-o-determinizmu
 
 # Par riječi o determinizmu
 
----
-
 ![Naslovna](../images/newton_njihalo.jpg)
 
 ---
