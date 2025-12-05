@@ -7,7 +7,7 @@ authors:
     name: Filip Reščić
     description: Osnivač
     avatar: avatari/cp_avatar.jpg
-  team:
-    name: Peripatetika Team
-    description: Tim Peripatetike
-    avatar: images/favicon.png   
+  # team:
+  #   name: Peripatetika
+  #   description: 
+  #   avatar: images/favicon.png   

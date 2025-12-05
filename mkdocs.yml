@@ -28,6 +28,7 @@ plugins:
       archive_url_date_format: MM/yyyy
       post_url_format: "{slug}"
   - tags
+  - social
 markdown_extensions:
   - attr_list
   - md_in_html
