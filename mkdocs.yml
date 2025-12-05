@@ -1,8 +1,11 @@
 site_name: Peripatetika
 site_url: https://peripatetika.com
+site_description: Blog o filozofiji, znanosti, religiji i društvu.
 theme: 
   name: material
   language: hr
+  font: 
+    text: Ubuntu
   favicon: images/favicon.png
   logo: images/favicon.png
   palette:
@@ -28,7 +31,8 @@ plugins:
       archive_url_date_format: MM/yyyy
       post_url_format: "{slug}"
   - tags
-  - social
+  - social:
+      cards_layout: default/invert
 markdown_extensions:
   - attr_list
   - md_in_html
