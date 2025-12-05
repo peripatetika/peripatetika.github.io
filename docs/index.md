@@ -1,6 +1,9 @@
 ---
 title: "Početna" 
-description: "test"
+social:
+  cards_layout_options:
+    background_color: transparent             # Change background color
+    background_image: avatari/bullseye.jpg             # Remove background image
 ---
 
 # Dobrodošli!

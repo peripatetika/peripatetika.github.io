@@ -32,7 +32,6 @@ plugins:
       post_url_format: "{slug}"
   - tags
   - social:
-      cards_layout: default/variant
 markdown_extensions:
   - attr_list
   - md_in_html
