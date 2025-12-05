@@ -1,5 +1,6 @@
 ---
 title: "Početna" 
+description: "test"
 ---
 
 # Dobrodošli!
