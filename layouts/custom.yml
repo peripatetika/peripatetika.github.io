@@ -1,0 +1,30 @@
+size: { width: 1200, height: 630 }
+layers:
+  - background:
+      color: "#3F51B5"
+  # - size: { width: 1200, height: 630 }
+  #   offset: { x: 0, y: 0 }
+  - size: { width: 500, height: 80 }
+    offset: { x: 350, y: 200 }
+    typography:
+      content: "Peripatetika"
+      align: center
+      color: white
+      line:
+        amount: 1
+        height: 1.2
+      font:
+        family: Ubuntu
+        style: Bold
+  - size: { width: 700, height: 80 }
+    offset: { x: 250, y: 280 }
+    typography:
+      content: "Blog o filozofiji, znanosti, religiji i društvu."
+      align: center
+      color: white
+      line:
+        amount: 2
+        height: 1.1
+      font:
+        family: Ubuntu
+        style: Regular    

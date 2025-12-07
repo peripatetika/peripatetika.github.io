@@ -34,7 +34,8 @@ plugins:
       post_url_format: "{slug}"
       pagination_per_page: 5
   - tags
-  - social
+  - social:
+      cards_layout_dir: layouts
 markdown_extensions:
   - attr_list
   - md_in_html

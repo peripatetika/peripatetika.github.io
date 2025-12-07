@@ -1,9 +1,7 @@
 ---
 title: "Početna" 
-# social:
-#   cards_layout_options:
-#     background_color: transparent             # Change background color
-#     background_image: avatari/bullseye.jpg             # Remove background image
+social:
+  cards_layout: custom
 ---
 
 # Dobrodošli!
