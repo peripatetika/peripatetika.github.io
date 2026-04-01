@@ -19,7 +19,7 @@ layers:
   - size: { width: 700, height: 80 }
     offset: { x: 250, y: 280 }
     typography:
-      content: "U potrazi za smislom - korak po korak"
+      content: "U potrazi za smislom. Korak po korak"
       align: center
       color: white
       line:

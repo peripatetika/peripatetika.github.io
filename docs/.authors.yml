@@ -2,11 +2,11 @@ authors:
   carlo:
     name: Carlo Paris
     description: Autor
-    avatar: avatari/cp_avatar.jpg
+    avatar: avatars/cp_avatar.jpg
   filip: 
     name: Filip Reščić
     description: Autor
-    avatar: avatari/fr_avatar.jpg
+    avatar: avatars/fr_avatar.jpg
   team:
     name: Peripatetika
     description: Carlo & Filip
