@@ -1,0 +1,32 @@
+.md-header__button.md-logo {
+    margin: 0.1rem;
+    padding: 0;
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+    height: 1.8rem;
+    width: auto;
+}
+
+.image-credit {
+    font-size: 0.5rem;       /* manji font */
+    color: #667;             /* siva boja */
+    text-align: center;      /* centrirano */
+    margin-top: 0rem;      /* malo prostora iznad */
+    margin-bottom: 0rem;     /* razmak ispod */
+}
+
+.logo-img {     /* never wider than container */
+  width: 2px;         /* ideal width for desktop */
+  height: 2px;         /* maintain aspect ratio */
+  display: block;       /* remove inline spacing */
+  margin: 10 auto;       /* center horizontally */
+}
+
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px;
+}
+
