@@ -1,6 +1,7 @@
 ---
 date: 
    created: 2026-04-01
+   updated: 2026-08-19
 authors:
    - team  
 slug: dobrodosli
@@ -8,7 +9,7 @@ slug: dobrodosli
 
 # Dobrodošli na blog Peripatetika!
 
-![naslovna](../images/naslovne/logo_naslovna.png)
+![naslovna](../images/naslovne/logo_naslovna.png){ .image-hero }
 
 > _Nihil est in intellectu quod non sit prius in sensu._
 > 
@@ -39,5 +40,7 @@ Nastojat ćemo biti jasni, bez pretenzija i nepotrebnih komplikacija. Blog dokum
 
 Nas dvojica smo dva povremena vikend-filozofa iz fotelje. Obojica imamo pozadinu iz fizike: jedan iz teorijske, drugi iz statističke fizike. Jedan se zadnjih godina bavi fenomenologijom kvantne gravitacije, a drugi primjenjuje elemente teorije informacije na proučavanje neuralnih sustava.
 
+---
 
+Ukoliko vas zanima priča iza naziva bloga _Peripatetika_, pročitajte [ovu objavu](./2026_4_naziv_bloga.md).
 

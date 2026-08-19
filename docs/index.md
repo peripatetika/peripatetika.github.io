@@ -5,4 +5,4 @@ social:
 ---
 ![naslovna](images/naslovna.png){ style="width: 500px; height: auto; display: block; margin: auto;" }
 
-<h2>Najnovije objave</h2>
+<h2><b>Najnovije objave</b></h2>

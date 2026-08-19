@@ -42,6 +42,8 @@ plugins:
 markdown_extensions:
   - attr_list
   - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
   - footnotes:
       BACKLINK_TITLE: "Vratite se na fusnotu {} u tekstu"
   - material.extensions.preview
@@ -55,8 +57,12 @@ extra_javascript:
   - assets/javascript/force-light-mode.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - assets/javascript/custom.js
+  - assets/javascript/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 extra_css:
   - assets/css/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
 extra:
   social:
     - icon: fontawesome/brands/telegram
