@@ -16,6 +16,25 @@
     margin-bottom: 0rem;     /* razmak ispod */
 }
 
+.image-inline {
+    max-width: 600px;   /* cap on large screens */
+    margin: 0 auto;
+}
+
+.image-inline img {
+    width: 85%;
+    margin: auto;
+    display: block;
+}
+
+.image-hero {
+    display: block;        /* allows centering */
+    width: 100%;           /* responsive */
+    max-width: 900px;      /* cap on desktop */
+    height: auto;
+    margin: 0 auto;     /* spacing + centering */
+}
+
 .logo-img {     /* never wider than container */
   width: 2px;         /* ideal width for desktop */
   height: 2px;         /* maintain aspect ratio */
