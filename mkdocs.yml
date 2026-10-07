@@ -59,7 +59,7 @@ plugins:
   # biblioteku Cairo. Lokalno su isključene da build radi na svakom računalu;
   # GitHub Actions ih generira (CI=true). Lokalno: CI=true mkdocs build
   - social:
-      enabled: !ENV [CI, false]
+      enabled: true
       cards_layout_dir: layouts
       cards_layout: peripatetika
 
