@@ -32,8 +32,8 @@ layers:
   - background:
       color: "#24272c"
   # Gore lijevo: ime bloga, u visini središta znaka
-  - size: { width: 600, height: 43 }
-    offset: { x: 80, y: 89 }
+  - size: { width: 600, height: 38 }
+    offset: { x: 80, y: 91 }
     typography:
       content: "{{ config.site_name }}"
       color: "#a1a5ac"
@@ -49,8 +49,8 @@ layers:
     background:
       image: docs/images/peripatetika.webp
   # Sredina: naslov, centriran; dugi naslovi se automatski smanje
-  - size: { width: 1000, height: 248 }
-    offset: { x: 100, y: 236 }
+  - size: { width: 1000, height: 268 }
+    offset: { x: 100, y: 226 }
     typography:
       content: "{{ page.meta.get('title', page.title) }}"
       align: center
