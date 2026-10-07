@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
-{% block announce %}
-  Zapratite naš <a href="https://t.me/+FKR3Ycy5UqowNWY0"><span class="twemoji">{% include ".icons/fontawesome/brands/telegram.svg" %}</span> Telegram</a> kanal!
+{#- Ubuntu za naslove i sučelje (Literata za tekst učitava sam Material). -#}
+{% block fonts %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap">
 {% endblock %}
 
-
+{% block announce %}
+  Zapratite naš
+  <a href="https://t.me/+FKR3Ycy5UqowNWY0">
+    <span class="twemoji">{% include ".icons/fontawesome/brands/telegram.svg" %}</span>
+    Telegram</a> kanal!
+{% endblock %}

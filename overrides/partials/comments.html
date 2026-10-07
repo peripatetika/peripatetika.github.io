@@ -1,0 +1,56 @@
+{#-
+  Završetak svakog blog-posta: izvor naslovne slike i podrška.
+
+  Podaci o naslovnoj slici upisuju se u zaglavlje (front matter) posta:
+
+    naslovna:
+      opis: Gustav Adolph Spangenberg, <em>Aristotelova škola</em>
+      izvor: kunstkopie.de
+      url: https://www.kunstkopie.de/...
+
+  Blok podrške dolazi automatski (postavke su u mkdocs.yml pod extra.podrska).
+  Za pojedini post isključuje se s:  podrska: false
+
+  Material ovaj predložak ("partials/comments.html") uključuje na dnu
+  svake stranice, pa je to službeno mjesto za ovakav dodatak.
+-#}
+{% if page.meta and page.meta.date %}
+  {% set naslovna = page.meta.naslovna %}
+  {% set podrska = config.extra.podrska %}
+  {% set prikazi_podrsku = podrska and page.meta.podrska != false %}
+  {% if naslovna or prikazi_podrsku %}
+    <footer class="pt-kraj">
+      {% if naslovna %}
+        <p class="pt-kraj__izvor">
+          Naslovna slika:
+          {% if naslovna.opis %}{{ naslovna.opis }}{% if naslovna.url %}; {% endif %}{% endif %}
+          {%- if naslovna.url %}
+            izvor: <a href="{{ naslovna.url }}" target="_blank" rel="noopener">{{ naslovna.izvor or "poveznica" }}</a>
+          {%- elif naslovna.izvor %}
+            izvor: {{ naslovna.izvor }}
+          {%- endif %}
+        </p>
+      {% endif %}
+      {% if prikazi_podrsku %}
+        <aside class="pt-podrska" aria-label="Podrška">
+          <div class="pt-podrska__tekst">
+            <p class="pt-podrska__naslov">Želiš li podržati naš rad?</p>
+            <p>
+              Počasti nas kavom<span class="pt-podrska__qr-uputa">: klikni
+              na gumb ili skeniraj QR kod</span>.
+            </p>
+            <a class="pt-podrska__gumb" href="{{ podrska.url }}" target="_blank" rel="noopener">
+              {% include ".icons/material/coffee-outline.svg" %}
+              <span>Počasti nas kavom</span>
+            </a>
+          </div>
+          {% if podrska.qr %}
+            <img class="pt-podrska__qr" src="{{ podrska.qr | url }}"
+                 alt="QR kod za podršku putem Buy Me a Coffee"
+                 width="128" height="128" loading="lazy">
+          {% endif %}
+        </aside>
+      {% endif %}
+    </footer>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,64 @@
+# Društvena kartica za objave (1200 × 630): ime bloga i znak gore, naslov centriran.
+# Meta oznake koje društvene mreže čitaju (naslov, opis, slika).
+# Bez ovog odjeljka kartica se generira, ali se ne prikazuje pri dijeljenju.
+definitions:
+  - &naslov >-
+    {%- if not page.is_homepage -%}
+      {{ page.meta.get("title", page.title) }} – {{ config.site_name }}
+    {%- else -%}
+      {{ config.site_name }}
+    {%- endif -%}
+  - &opis >-
+    {{ page.meta.get("description", config.site_description) | x }}
+
+tags:
+  og:type: article
+  og:site_name: "{{ config.site_name }}"
+  og:locale: hr_HR
+  og:title: *naslov
+  og:description: *opis
+  og:image: "{{ image.url }}"
+  og:image:type: "{{ image.type }}"
+  og:image:width: "{{ image.width }}"
+  og:image:height: "{{ image.height }}"
+  og:url: "{{ page.canonical_url }}"
+  twitter:card: summary_large_image
+  twitter:title: *naslov
+  twitter:description: *opis
+  twitter:image: "{{ image.url }}"
+
+size: { width: 1200, height: 630 }
+layers:
+  - background:
+      color: "#24272c"
+  # Gore lijevo: ime bloga, u visini središta znaka
+  - size: { width: 600, height: 43 }
+    offset: { x: 80, y: 89 }
+    typography:
+      content: "{{ config.site_name }}"
+      color: "#a1a5ac"
+      line:
+        amount: 1
+        height: 1
+      font:
+        family: Ubuntu
+        style: Medium
+  # Gore desno: znak bloga
+  - size: { width: 108, height: 108 }
+    offset: { x: 1032, y: 56 }
+    background:
+      image: docs/images/peripatetika.webp
+  # Sredina: naslov, centriran; dugi naslovi se automatski smanje
+  - size: { width: 1000, height: 248 }
+    offset: { x: 100, y: 236 }
+    typography:
+      content: "{{ page.meta.get('title', page.title) }}"
+      align: center
+      overflow: shrink
+      color: "#ffffff"
+      line:
+        amount: 3
+        height: 1.25
+      font:
+        family: Ubuntu
+        style: Bold

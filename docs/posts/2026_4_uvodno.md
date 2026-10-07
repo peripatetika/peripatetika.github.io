@@ -5,11 +5,12 @@ date:
 authors:
    - team  
 slug: dobrodosli
+podrska: false
 ---
 
 # Dobrodošli na blog Peripatetika!
 
-![naslovna](../images/naslovne/logo_naslovna.png){ .image-hero }
+![Peripatetika](../images/naslovne/dobrodosli.webp){ .image-hero }
 
 > _Nihil est in intellectu quod non sit prius in sensu._
 > 

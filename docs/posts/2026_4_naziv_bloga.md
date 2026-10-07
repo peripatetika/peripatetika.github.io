@@ -4,6 +4,10 @@ date:
 authors:
    - team  
 slug: zasto-peripatetika
+naslovna:
+   opis: Gustav Adolph Spangenberg, <em>Aristotelova škola</em>
+   izvor: kunstkopie.de
+   url: https://www.kunstkopie.de/kunst/gustav_adolph_spangenberg/Schule-des-Aristoteles-1.jpg
 ---
 
 # Zašto *Peripatetika*?
@@ -46,11 +50,3 @@ To u praksi znači da na ovom blogu nećemo nužno u startu znati odgovore na na
 Očito, budući da živimo sada a ne u nekom drugom vremenu, naša će perspektiva biti ona "modernog čovjeka". Kao i svih, i nas zanimaju odgovori na pitanja koje se Čovjek uvijek pitao: "Kako funkcionira svijet?", "Kako svijet uklopiti u vlastiti život i kako život uskladiti sa ostatkom svijeta?" i naravno, najbitnije: "Zašto?". Odgovore na ta veoma općenita pitanja pokušavaju dati znanost, filozofija i religija. O znanosti znamo nešto malo, o filozofiji nešto manje, a o religiji gotovo ništa. 
 
 Ali to nas neće spriječiti da ipak kažemo barem nešto!
-
----
-
-<small>
-Izvor naslovne slike: Gustav Adolph Spangenberg, "*Aristotelova škola*"; [kunstkopie.de](https://www.kunstkopie.de/kunst/gustav_adolph_spangenberg/Schule-des-Aristoteles-1.jpg)
-</small>
-
----

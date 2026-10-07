@@ -1,0 +1,13 @@
+{#-
+  Prijevodi sučelja. Polazi se od službenog hrvatskog prijevoda Materiala,
+  a ovdje su samo izrazi koje želimo drugačije.
+-#}
+{% import "partials/languages/" ~ config.theme.language ~ ".html" as lang %}
+{% import "partials/languages/en.html" as fallback %}
+{% macro t(key) %}{{ {
+  "blog.index": "Natrag na početnu",
+  "blog.meta": "O objavi",
+  "readtime.one": "1 min čitanja",
+  "readtime.other": "# min čitanja",
+  "top": "Na vrh",
+}[key] or lang.t(key) or fallback.t(key) or key }}{% endmacro %}

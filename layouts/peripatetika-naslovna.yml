@@ -1,0 +1,64 @@
+# Društvena kartica za naslovnicu (1200 × 630): znak gore, ime bloga i moto centrirani.
+# Meta oznake koje društvene mreže čitaju (naslov, opis, slika).
+# Bez ovog odjeljka kartica se generira, ali se ne prikazuje pri dijeljenju.
+definitions:
+  - &naslov >-
+    {%- if not page.is_homepage -%}
+      {{ page.meta.get("title", page.title) }} – {{ config.site_name }}
+    {%- else -%}
+      {{ config.site_name }}
+    {%- endif -%}
+  - &opis >-
+    {{ page.meta.get("description", config.site_description) | x }}
+
+tags:
+  og:type: website
+  og:site_name: "{{ config.site_name }}"
+  og:locale: hr_HR
+  og:title: *naslov
+  og:description: *opis
+  og:image: "{{ image.url }}"
+  og:image:type: "{{ image.type }}"
+  og:image:width: "{{ image.width }}"
+  og:image:height: "{{ image.height }}"
+  og:url: "{{ page.canonical_url }}"
+  twitter:card: summary_large_image
+  twitter:title: *naslov
+  twitter:description: *opis
+  twitter:image: "{{ image.url }}"
+
+size: { width: 1200, height: 630 }
+layers:
+  - background:
+      color: "#24272c"
+  # Gore desno: znak bloga
+  - size: { width: 108, height: 108 }
+    offset: { x: 1032, y: 56 }
+    background:
+      image: docs/images/peripatetika.webp
+  # Ime bloga, centrirano
+  - size: { width: 1040, height: 99 }
+    offset: { x: 80, y: 266 }
+    typography:
+      content: "{{ config.site_name }}"
+      align: center
+      color: "#ffffff"
+      line:
+        amount: 1
+        height: 1.1
+      font:
+        family: Ubuntu
+        style: Bold
+  # Moto
+  - size: { width: 1040, height: 45 }
+    offset: { x: 80, y: 379 }
+    typography:
+      content: "U potrazi za smislom. Korak po korak."
+      align: center
+      color: "#e4e3df"
+      line:
+        amount: 1
+        height: 1.2
+      font:
+        family: Ubuntu
+        style: Italic

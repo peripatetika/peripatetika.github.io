@@ -1,0 +1,905 @@
+/* ==========================================================================
+   Peripatetika: vizualni identitet bloga
+   --------------------------------------------------------------------------
+   Sadržaj:
+     1. Boje (svijetli i tamni način)
+     2. Tipografija
+     3. Zaglavlje, kartice, najava, podnožje
+     4. Naslovnica (hero i popis objava)
+     5. Naslovne slike postova
+     6. Slike u tekstu i potpisi
+     7. Stranica posta (bočna traka, citati, fusnote...)
+     8. Završni blok posta (izvor slike, podrška)
+   Sve klase koje smo sami uveli počinju s .pt- (Peripatetika),
+   osim .image-hero, .image-inline i .image-credit koje postovi već koriste.
+   ========================================================================== */
+
+
+/* 1. Boje ================================================================= */
+
+:root {
+  --pt-sans: "Ubuntu", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --pt-mjera: 38rem;           /* širina stupca na naslovnici */
+  --pt-radius: 0.3rem;
+}
+
+[data-md-color-scheme="default"] {
+  --pt-papir:   #ffffff;
+  --pt-povrsina:#f4f5f6;       /* blago sivo za blokove */
+  --pt-tinta:   #24272c;       /* tekst: grafit, kao čelik pikada */
+  --pt-sivo:    #61666e;       /* sporedni tekst */
+  --pt-crta:    #e2e4e7;       /* tanke linije */
+  --pt-akcent:  #b3263a;       /* crvena sredine mete */
+  --pt-akcent-tamniji: #8e1c2d;
+
+  --md-default-bg-color: var(--pt-papir);
+  --md-default-fg-color: var(--pt-tinta);
+  --md-default-fg-color--light: var(--pt-sivo);
+  --md-default-fg-color--lighter: #9a9fa6;
+  --md-default-fg-color--lightest: var(--pt-crta);
+  --md-typeset-color: var(--pt-tinta);
+  --md-code-bg-color: var(--pt-povrsina);
+}
+
+[data-md-color-scheme="slate"] {
+  --pt-papir:   #17181b;
+  --pt-povrsina:#202227;
+  --pt-tinta:   #e4e3df;
+  --pt-sivo:    #a1a5ac;
+  --pt-crta:    #2f3237;
+  --pt-akcent:  #f0848e;
+  --pt-akcent-tamniji: #f7a9b0;
+
+  --md-hue: 220;
+  --md-default-bg-color: var(--pt-papir);
+  --md-default-fg-color: var(--pt-tinta);
+  --md-default-fg-color--light: var(--pt-sivo);
+  --md-default-fg-color--lighter: #6e737b;
+  --md-default-fg-color--lightest: var(--pt-crta);
+  --md-typeset-color: var(--pt-tinta);
+  --md-code-bg-color: var(--pt-povrsina);
+}
+
+/* "primary: custom" i "accent: custom" iz mkdocs.yml */
+:root,
+[data-md-color-scheme] {
+  --md-primary-fg-color: var(--pt-papir);
+  --md-primary-fg-color--light: var(--pt-povrsina);
+  --md-primary-fg-color--dark: var(--pt-tinta);
+  --md-primary-bg-color: var(--pt-tinta);
+  --md-primary-bg-color--light: var(--pt-sivo);
+  --md-accent-fg-color: var(--pt-akcent);
+  --md-accent-fg-color--transparent: color-mix(in srgb, var(--pt-akcent) 10%, transparent);
+  --md-typeset-a-color: var(--pt-akcent);
+  --md-footer-bg-color: var(--pt-papir);
+  --md-footer-bg-color--dark: var(--pt-papir);
+  --md-footer-fg-color: var(--pt-tinta);
+  --md-footer-fg-color--light: var(--pt-sivo);
+  --md-footer-fg-color--lighter: var(--pt-sivo);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--pt-akcent) 22%, transparent);
+}
+
+
+/* 2. Tipografija ========================================================== */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+/* Tekst članka i izvadaka */
+.md-content__inner.md-typeset,
+.md-post__content.md-typeset {
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+@media screen and (min-width: 45em) {
+  .md-content__inner.md-typeset,
+  .md-post__content.md-typeset {
+    font-size: 0.82rem;
+  }
+}
+
+/* Poravnanje: obostrano uz rastavljanje riječi na desktopu,
+   lijevo na uskim ekranima (obostrano tamo stvara "rupe"). */
+.md-typeset p,
+.md-typeset li {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-wrap: pretty;
+}
+
+@media screen and (min-width: 45em) {
+  .md-content__inner.md-typeset > p,
+  .md-post__content > p {
+    text-align: justify;
+  }
+}
+
+/* Naslovi: Ubuntu, kao u logotipu */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--pt-sans);
+  color: var(--pt-tinta);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  hyphens: manual;
+}
+
+.md-typeset h1 {
+  font-size: 1.9em;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.9em;
+}
+
+.md-typeset h2 {
+  font-size: 1.35em;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 2.2em 0 0.7em;
+}
+
+.md-typeset h3 {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 1.8em 0 0.5em;
+}
+
+.md-typeset h4 {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/* Poveznice: boja mete, diskretno podcrtane */
+.md-typeset a {
+  color: var(--pt-akcent);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--pt-akcent) 35%, transparent);
+  transition: text-decoration-color 120ms;
+}
+
+.md-typeset a:is(:hover, :focus) {
+  color: var(--pt-akcent-tamniji);
+  text-decoration-color: currentColor;
+}
+
+/* Naslovi koji su poveznice (izvadci, sidra) ne trebaju podcrtavanje */
+.md-typeset :is(h1, h2, h3) a,
+.md-typeset a.toclink,
+.md-typeset a.headerlink,
+.md-typeset .md-post__action a,
+.md-typeset a.footnote-ref,
+.md-typeset a.footnote-backref,
+.md-typeset .md-author,
+.md-typeset a:has(> img) {
+  text-decoration: none;
+}
+
+.md-typeset hr {
+  border-bottom: 0.05rem solid var(--pt-crta);
+  margin: 2.5em 0;
+}
+
+.md-typeset small {
+  font-size: 0.8em;
+  color: var(--pt-sivo);
+}
+
+/* Sučelje (izbornici, metapodaci, gumbi) u Ubuntu */
+.md-header,
+.md-tabs,
+.md-nav,
+.md-banner,
+.md-footer,
+.md-meta,
+.md-post__action,
+.md-pagination,
+.md-search,
+.md-top,
+.md-sidebar,
+.md-typeset figcaption,
+.md-typeset .admonition-title,
+.md-typeset summary,
+.md-typeset .footnote,
+.md-typeset table {
+  font-family: var(--pt-sans);
+}
+
+
+/* 3. Zaglavlje, kartice, najava, podnožje ================================= */
+
+.md-header {
+  background-color: color-mix(in srgb, var(--pt-papir) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  color: var(--pt-tinta);
+  box-shadow: none;
+  border-bottom: 0.05rem solid var(--pt-crta);
+}
+
+.md-header--shadow {
+  box-shadow: none;
+}
+
+.md-header__title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: -0.005em;
+}
+
+.md-header__button.md-logo {
+  margin: 0.2rem 0.1rem;
+  padding: 0.2rem;
+}
+
+.md-header__button.md-logo :is(img, svg) {
+  height: 1.6rem;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* Tražilica u zaglavlju: tiho sivo polje */
+@media screen and (min-width: 60em) {
+  .md-search__form {
+    background-color: var(--pt-povrsina);
+    border-radius: var(--pt-radius);
+  }
+  .md-search__form:hover {
+    background-color: color-mix(in srgb, var(--pt-tinta) 8%, var(--pt-papir));
+  }
+  .md-search__input::placeholder,
+  .md-search__input ~ .md-search__icon {
+    color: var(--pt-sivo);
+  }
+  .md-search__input {
+    color: var(--pt-tinta);
+  }
+}
+
+/* Kartice (Početna / Tagovi / Arhiva) */
+.md-tabs {
+  background-color: var(--pt-papir);
+  color: var(--pt-sivo);
+  border-bottom: 0.05rem solid var(--pt-crta);
+}
+
+.md-tabs__list {
+  contain: none;
+}
+
+.md-tabs__link {
+  font-size: 0.72rem;
+  opacity: 1;
+  color: var(--pt-sivo);
+  margin-top: 0.7rem;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  color: var(--pt-tinta);
+}
+
+.md-tabs__item--active {
+  box-shadow: inset 0 -0.1rem 0 var(--pt-akcent);
+}
+
+.md-tabs__link:is(:hover, :focus) {
+  color: var(--pt-akcent);
+}
+
+/* Najava (Telegram) */
+.md-banner {
+  background-color: #eaecef;
+  color: #4a4f57;
+  font-size: 0.72rem;
+}
+[data-md-color-scheme="slate"] .md-banner {
+  background-color: #25282d;
+  color: #b4b8be;
+}
+
+.md-banner__inner {
+  margin: 0.45rem auto;
+  text-align: center;
+}
+
+.md-banner a {
+  color: var(--pt-tinta);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.md-banner a:hover {
+  color: var(--pt-akcent);
+}
+
+.md-banner .twemoji {
+  color: #229ed9;
+}
+
+.md-banner__button {
+  color: var(--pt-sivo);
+}
+
+/* Podnožje */
+.md-footer {
+  border-top: 0.05rem solid var(--pt-crta);
+}
+
+.md-footer-meta {
+  background-color: var(--pt-papir);
+}
+
+.md-footer-meta__inner {
+  padding: 0.8rem 0.2rem;
+}
+
+.md-copyright {
+  color: var(--pt-sivo);
+  font-size: 0.62rem;
+}
+
+.md-copyright a,
+.md-footer-meta.md-typeset a {
+  color: var(--pt-sivo);
+  text-decoration: underline;
+  text-decoration-color: var(--pt-crta);
+}
+
+.md-copyright a:hover,
+.md-footer-meta.md-typeset a:hover {
+  color: var(--pt-akcent);
+}
+
+.md-social__link svg {
+  fill: var(--pt-sivo);
+}
+
+.md-social__link:hover svg {
+  fill: var(--pt-akcent);
+}
+
+/* Gumb "Na vrh" */
+.md-top {
+  background-color: var(--pt-papir);
+  color: var(--pt-sivo);
+  box-shadow: 0 0 0 0.05rem var(--pt-crta);
+}
+
+.md-top:hover {
+  background-color: var(--pt-papir);
+  color: var(--pt-akcent);
+}
+
+/* Lijeva navigacija (Tagovi, Arhiva) */
+.md-nav__title {
+  color: var(--pt-sivo);
+}
+
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--pt-akcent);
+}
+
+.md-nav__link:is(:hover, :focus) {
+  color: var(--pt-akcent);
+}
+
+/* Fokus tipkovnicom */
+:focus-visible {
+  outline: 0.1rem solid var(--pt-akcent);
+  outline-offset: 0.15rem;
+}
+
+
+/* 4. Naslovnica =========================================================== */
+
+/* Naslovnica nema bočnu traku, pa sadržaj suzimo na ugodnu širinu */
+@media screen and (min-width: 45em) {
+  .md-content:has(.pt-hero) > .md-content__inner {
+    max-width: var(--pt-mjera);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.pt-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin: 1.6rem 0 2.8rem;
+}
+
+.md-typeset .pt-hero > p {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.md-typeset .pt-hero__znak {
+  display: block;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.05rem var(--pt-crta);
+}
+
+.md-typeset .pt-hero h1 {
+  font-size: 2.6em;
+  line-height: 1;
+  margin: 0 0 0.3em;
+  letter-spacing: -0.025em;
+}
+
+.md-typeset .pt-hero__moto {
+  font-style: italic;
+  font-size: 1.15em;
+  line-height: 1.4;
+  margin: 0 0 0.6em;
+  color: var(--pt-tinta);
+}
+
+.md-typeset .pt-hero__opis {
+  font-family: var(--pt-sans);
+  font-size: 0.8em;
+  color: var(--pt-sivo);
+  margin: 0;
+}
+
+@media screen and (max-width: 30em) {
+  .pt-hero {
+    gap: 1.1rem;
+    margin: 0.8rem 0 2rem;
+  }
+  .md-typeset .pt-hero__znak {
+    width: 5rem;
+    height: 5rem;
+  }
+  .md-typeset .pt-hero h1 {
+    font-size: 1.9em;
+  }
+  .md-typeset .pt-hero__moto {
+    font-size: 1em;
+  }
+}
+
+/* "Najnovije objave" */
+.md-typeset h2.pt-naslov-popisa {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--pt-tinta);
+  margin: 0 0 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 0.05rem solid var(--pt-crta);
+}
+
+/* Popis objava (izvadci). Redoslijed se slaže CSS-om:
+   naslovna slika, naslov, datum, uvodni tekst, "Nastavi čitati". */
+.md-post--excerpt {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.4rem;
+}
+
+.md-post--excerpt .md-post__content {
+  display: contents;
+}
+
+.md-post--excerpt .md-post__content > * {
+  order: 4;
+}
+
+.md-post--excerpt .md-post__content > p:has(> .image-hero) {
+  order: 1;
+  margin: 0 0 1.1rem;
+}
+
+.md-post--excerpt .md-post__content > h2:first-child {
+  order: 2;
+  font-size: 1.45em;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+}
+
+.md-post--excerpt .md-post__header {
+  order: 3;
+  min-height: 0;
+  margin-bottom: 0.6rem;
+}
+
+.md-post--excerpt .md-post__content > h2 a {
+  color: var(--pt-tinta);
+}
+
+.md-post--excerpt .md-post__content > h2 a:hover {
+  color: var(--pt-akcent);
+}
+
+/* Autor je na naslovnici uvijek isti tim, pa avatar samo smeta */
+.md-post--excerpt .md-post__authors {
+  display: none;
+}
+
+.md-post--excerpt .md-meta {
+  font-size: 0.68rem;
+}
+
+.md-post--excerpt .md-post__content > p,
+.md-post--excerpt .md-post__content > blockquote {
+  margin-top: 0;
+}
+
+.md-post--excerpt .md-post__action {
+  order: 5;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.md-post--excerpt .md-post__action a {
+  color: var(--pt-akcent);
+}
+
+.md-post--excerpt .md-post__action a:hover {
+  color: var(--pt-akcent-tamniji);
+}
+
+/* Razmak između objava: tanka linija */
+.md-post--excerpt + .md-post--excerpt {
+  border-top: 0.05rem solid var(--pt-crta);
+  padding-top: 2.4rem;
+}
+
+.md-pagination {
+  font-size: 0.75rem;
+}
+
+
+/* 5. Naslovne slike postova ===============================================
+   U postu:  ![opis](../images/naslovne/slika.jpg){ .image-hero }
+   Slika može biti bilo kojih dimenzija: prikazuje se u omjeru 2:1
+   (16:9 na mobitelu) i automatski se izreže oko sredine.
+   Ako je važan detalj pri vrhu ili dnu, fokus se pomiče ovako:
+     { .image-hero style="object-position: 50% 20%" }
+   (prvi broj je vodoravno, drugi okomito; 50% 50% je sredina).        */
+
+.md-typeset img.image-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: var(--pt-radius);
+  background-color: var(--pt-povrsina);
+  /* tanki rub: vidi se granica i kad je slika bijela */
+  outline: 0.05rem solid var(--pt-crta);
+  outline-offset: -0.05rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 45em) {
+  .md-typeset img.image-hero {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* U samom postu: odmah ispod naslova */
+.md-content__inner > p:has(> img.image-hero) {
+  margin: 0 0 2em;
+}
+
+
+/* 6. Slike u tekstu =======================================================
+   Obična Markdown slika u vlastitom odlomku:  ![opis](../images/x.jpg)
+   Sve dobivaju istu širinu (85 % stupca, puna širina na mobitelu),
+   a visina im je ograničena, pa uspravne slike ne zauzmu cijeli ekran.
+   Iznimke po potrebi:  { .siroka }  puna širina,  { .uska }  pola širine.
+   Potpis:
+     ![opis](../images/x.jpg)
+     /// caption
+     Tekst potpisa.
+     ///                                                                   */
+
+.md-typeset figure {
+  width: 100%;
+  margin: 2em auto;
+}
+
+.md-typeset :is(p > img:only-child, figure img, p > a:only-child > img):not(.image-hero, .pt-hero__znak, .twemoji) {
+  display: block;
+  width: 85%;
+  height: auto;
+  max-height: 32rem;
+  object-fit: contain;
+  margin: 2em auto;
+  border-radius: var(--pt-radius);
+}
+
+.md-typeset figure img:not(.twemoji) {
+  margin: 0 auto;
+}
+
+.md-typeset :is(p, figure) img.siroka {
+  width: 100%;
+}
+
+.md-typeset :is(p, figure) img.uska {
+  width: 50%;
+}
+
+@media screen and (max-width: 45em) {
+  .md-typeset :is(p > img:only-child, figure img, p > a:only-child > img):not(.image-hero, .pt-hero__znak, .twemoji) {
+    width: 100%;
+  }
+  .md-typeset :is(p, figure) img.uska {
+    width: 70%;
+  }
+}
+
+/* Potpisi (i stari .image-credit) */
+.md-typeset figcaption,
+.md-typeset .image-credit {
+  max-width: 85%;
+  margin: 0.7em auto 0;
+  font-size: 0.72em;
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--pt-sivo);
+  text-align: center;
+}
+
+.md-typeset figcaption p {
+  margin: 0;
+}
+
+/* Stari omotač <figure class="image-inline"> iz prvih postova */
+.md-typeset .image-inline {
+  max-width: none;
+}
+
+
+/* 7. Stranica posta ======================================================= */
+
+/* Bočna traka posta: autor, datum, vrijeme čitanja */
+.md-post__back .md-nav__link {
+  color: var(--pt-sivo);
+  font-size: 0.7rem;
+}
+
+.md-post__back .md-nav__link:hover {
+  color: var(--pt-akcent);
+}
+
+.md-post__profile .md-profile__description {
+  font-size: 0.68rem;
+  color: var(--pt-sivo);
+}
+
+.md-post__profile strong {
+  color: var(--pt-tinta);
+  font-weight: 500;
+}
+
+.md-post__title {
+  color: var(--pt-sivo);
+  font-weight: 500;
+}
+
+.md-sidebar--post .md-nav__link {
+  color: var(--pt-sivo);
+}
+
+/* Sadržaj (desno) */
+.md-nav--secondary .md-nav__title {
+  color: var(--pt-sivo);
+  font-weight: 500;
+}
+
+/* Citati */
+[dir] .md-typeset blockquote {
+  border-left: 0.12rem solid var(--pt-crta);
+  color: var(--pt-sivo);
+  padding-left: 1.1rem;
+  margin: 1.8em 0;
+}
+
+.md-typeset blockquote p {
+  margin: 0.4em 0;
+}
+
+/* Napomene (admonition) bez okvira, samo s lijevom crtom */
+.md-typeset .admonition,
+.md-typeset details {
+  border: none;
+  border-left: 0.2rem solid var(--md-admonition-fg-color, var(--pt-sivo));
+  border-radius: 0 var(--pt-radius) var(--pt-radius) 0;
+  background-color: var(--pt-povrsina);
+  box-shadow: none;
+  font-size: 0.82em;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: transparent !important;
+  font-weight: 500;
+}
+
+/* Formule malo veće od okolnog teksta izgledaju preglomazno */
+.md-typeset .katex {
+  font-size: 1.05em;
+}
+
+.md-typeset div.arithmatex {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1.4em 0;       /* ← razmak iznad i ispod formule */
+}
+
+.md-typeset div.arithmatex > span {
+  display: block;
+}
+
+.md-typeset div.arithmatex .katex-display {
+  margin: 0;
+}
+/* Fusnote */
+.md-typeset .footnote {
+  color: var(--pt-sivo);
+  font-size: 0.78em;
+  margin-top: 3em;
+}
+
+.md-typeset .footnote > hr {
+  margin: 0 0 1em;
+  width: 6rem;
+}
+
+.md-typeset .footnote-ref {
+  font-family: var(--pt-sans);
+}
+
+/* Tagovi iznad naslova */
+.md-typeset .md-tag {
+  background-color: var(--pt-povrsina);
+  color: var(--pt-sivo);
+  font-family: var(--pt-sans);
+  font-weight: 500;
+}
+
+
+/* 8. Završni blok posta ===================================================
+   Generira ga overrides/partials/comments.html                         */
+
+.pt-kraj {
+  margin-top: 2.6rem;
+}
+
+.md-typeset .pt-kraj :is(p, a, span) {
+  font-family: var(--pt-sans);
+}
+
+/* Znak kraja članka: mala meta */
+.pt-kraj::before {
+  content: "";
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0 auto 2.2rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--pt-akcent) 0 28%, transparent 30% 100%);
+  box-shadow: inset 0 0 0 0.09rem var(--pt-tinta);
+  opacity: 0.85;
+}
+
+.md-typeset .pt-kraj__izvor {
+  font-size: 0.7em;
+  line-height: 1.5;
+  color: var(--pt-sivo);
+  text-align: center;
+  margin: 0 auto 2rem;
+  max-width: 34rem;
+}
+
+.md-typeset .pt-kraj__izvor a {
+  color: var(--pt-sivo);
+  text-decoration-color: var(--pt-crta);
+}
+
+.md-typeset .pt-kraj__izvor a:hover {
+  color: var(--pt-akcent);
+  text-decoration-color: currentColor;
+}
+
+/* Podrška */
+.pt-podrska {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: 1.1rem 1.3rem;
+  border: 0.05rem solid var(--pt-crta);
+  border-radius: calc(var(--pt-radius) * 2);
+  background-color: var(--pt-povrsina);
+}
+
+.md-typeset .pt-podrska p {
+  margin: 0;
+  font-size: 0.72em;
+  line-height: 1.5;
+  color: var(--pt-sivo);
+  text-align: left;
+}
+
+.md-typeset .pt-podrska .pt-podrska__naslov {
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--pt-tinta);
+  margin-bottom: 0.2rem;
+}
+
+.md-typeset .pt-podrska__gumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.8rem;
+  padding: 0.45em 0.95em;
+  font-size: 0.72em;
+  font-weight: 500;
+  color: var(--pt-papir);
+  background-color: var(--pt-tinta);
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background-color 120ms;
+}
+
+.md-typeset .pt-podrska__gumb:is(:hover, :focus) {
+  color: var(--pt-papir);
+  background-color: var(--pt-akcent);
+}
+
+.md-typeset .pt-podrska__gumb svg {
+  width: 1.1em;
+  height: 1.1em;
+  fill: currentColor;
+}
+
+/* QR kod uvijek na bijelom (u tamnom načinu inače nije čitljiv) */
+.md-typeset img.pt-podrska__qr {
+  flex-shrink: 0;
+  width: 5.6rem;
+  height: 5.6rem;
+  margin: 0;
+  padding: 0.25rem;
+  background: #ffffff;
+  border-radius: var(--pt-radius);
+  max-height: none;
+}
+
+/* Na mobitelu se QR ne može skenirati s istog ekrana: skrij ga */
+@media screen and (max-width: 45em) {
+  .md-typeset img.pt-podrska__qr,
+  .pt-podrska__qr-uputa {
+    display: none;
+  }
+}
+
+
+/* Ispis ===================================================================== */
+
+@media print {
+  .pt-podrska,
+  .pt-kraj::before {
+    display: none;
+  }
+}
