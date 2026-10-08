@@ -36,7 +36,7 @@
           <div class="pt-podrska__tekst">
             <p class="pt-podrska__naslov">Želiš li podržati naš rad?</p>
             <p>
-              <span class="pt-podrska__qr-uputa">Počasti nas kavom: klikni
+              <span class="pt-podrska__qr-uputa">Klikni
               na gumb ili skeniraj QR kod.</span>
             </p>
             <a class="pt-podrska__gumb" href="{{ podrska.url }}" target="_blank" rel="noopener">
@@ -44,6 +44,10 @@
               <span>Počasti nas kavom</span>
             </a>
           </div>
+          <a class="pt-podrska__znak" href="{{ podrska.url }}" target="_blank" rel="noopener" tabindex="-1">
+            <img src="{{ 'images/bmc_znak.webp' | url }}" alt="Buy Me a Coffee"
+                 width="64" height="64" loading="lazy">
+          </a>
           {% if podrska.qr %}
             <img class="pt-podrska__qr" src="{{ podrska.qr | url }}"
                  alt="QR kod za podršku putem Buy Me a Coffee"

@@ -60,7 +60,7 @@ plugins:
   # GitHub Actions ih generira (CI=true). Lokalno: CI=true mkdocs build
   - social:
       enabled: true
-      cards_dir: assets/images/cards
+      cards_dir: assets/images/kartice
       cards_layout_dir: layouts
       cards_layout: peripatetika
 

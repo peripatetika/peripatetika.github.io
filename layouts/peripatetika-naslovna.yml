@@ -32,8 +32,8 @@ layers:
   - background:
       color: "#24272c"
   # Gore desno: znak bloga
-  - size: { width: 108, height: 108 }
-    offset: { x: 1032, y: 56 }
+  - size: { width: 128, height: 128 }
+    offset: { x: 992, y: 46 }
     background:
       image: docs/images/peripatetika.webp
   # Ime bloga, centrirano

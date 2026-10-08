@@ -886,11 +886,31 @@ body {
   max-height: none;
 }
 
+/* Znak Buy Me a Coffee (isti kao u sredini QR koda):
+   vidi se samo na mobitelu, umjesto QR koda */
+.md-typeset .pt-podrska__znak {
+  display: none;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.md-typeset .pt-podrska__znak img {
+  display: block;
+  width: 3.2rem;          /* ← veličina znaka */
+  height: 3.2rem;
+  max-height: none;
+  margin: 0;
+  border-radius: 0;
+}
+
 /* Na mobitelu se QR ne može skenirati s istog ekrana: skrij ga */
 @media screen and (max-width: 45em) {
   .md-typeset img.pt-podrska__qr,
   .pt-podrska__qr-uputa {
     display: none;
+  }
+  .md-typeset .pt-podrska__znak {
+    display: flex;
   }
 }
 
