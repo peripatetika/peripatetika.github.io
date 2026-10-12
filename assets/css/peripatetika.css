@@ -896,8 +896,8 @@ body {
 
 .md-typeset .pt-podrska__znak img {
   display: block;
-  width: 3.2rem;          /* ← veličina znaka */
-  height: 3.2rem;
+  width: 2.6rem;          /* ← veličina znaka */
+  height: 2.6rem;
   max-height: none;
   margin: 0;
   border-radius: 0;
