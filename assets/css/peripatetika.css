@@ -906,14 +906,44 @@ body {
   border-radius: 0;
 }
 
-/* Na mobitelu se QR ne može skenirati s istog ekrana: skrij ga */
 @media screen and (max-width: 45em) {
   .md-typeset img.pt-podrska__qr,
   .pt-podrska__qr-uputa {
     display: none;
   }
+
+  /* Na mobitelu: pitanje preko cijele širine, ispod njega gumb lijevo
+     i znak desno, pa pitanje ostaje u jednom retku i na malim ekranima */
+  .pt-podrska {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "naslov naslov"
+      "gumb   znak";
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.7rem;          /* ← razmak između pitanja i gumba */
+    padding: 1rem 1.1rem;
+  }
+  .pt-podrska__tekst {
+    display: contents;
+  }
+  .md-typeset .pt-podrska .pt-podrska__naslov {
+    grid-area: naslov;
+    margin: 0;
+  }
+  .md-typeset .pt-podrska__gumb {
+    grid-area: gumb;
+    justify-self: start;
+    margin: 0;
+  }
   .md-typeset .pt-podrska__znak {
+    grid-area: znak;
     display: flex;
+  }
+  .md-typeset .pt-podrska__znak img {
+    width: 2rem;              /* ← veličina znaka na mobitelu */
+    height: 2rem;
   }
 }
 
