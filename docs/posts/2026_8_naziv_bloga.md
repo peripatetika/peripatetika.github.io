@@ -29,15 +29,10 @@ Pokušaji građenja vlastitih argumenata i objašnjenja svijeta počinjući od o
 
 U tom smislu o njima možemo razmišljati kao o "*filozofima lutalicama*".
 
-<figure class="image-inline">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Peripatos_Acropolis_Athens.jpg/1280px-Peripatos_Acropolis_Athens.jpg" alt="slika">
-   <figcaption class="image-credit">
-   Šetnica <em>Peripatos</em>. Izvor: 
-   <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Peripatos_Acropolis_Athens.jpg/1280px-Peripatos_Acropolis_Athens.jpg" target="_blank" rel="noopener">
-      Wikimedia Commons
-   </a>
-   </figcaption>
-</figure>
+![Šetnica Peripatos](../images/Peripatos_Acropolis_Athens.jpg)
+/// caption
+Šetnica *Peripatos*. Izvor: [Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Peripatos_Acropolis_Athens.jpg/1280px-Peripatos_Acropolis_Athens.jpg){ target="_blank" rel="noopener" }.
+///
 
 ## Metoda bloga Peripatetika
 

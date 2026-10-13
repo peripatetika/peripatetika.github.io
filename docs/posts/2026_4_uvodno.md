@@ -39,9 +39,9 @@ Nastojat ćemo biti jasni, bez pretenzija i nepotrebnih komplikacija. Blog dokum
 
 ### Tko smo mi?
 
-Nas dvojica smo dva povremena vikend-filozofa iz fotelje. Obojica imamo pozadinu iz fizike: jedan iz teorijske, drugi iz statističke fizike. Jedan se zadnjih godina bavi fenomenologijom kvantne gravitacije, a drugi primjenjuje elemente teorije informacije na proučavanje neuralnih sustava.
+Nas dvojica smo dva povremena vikend-filozofa iz fotelje. Obojica imamo pozadinu iz fizike: jedan iz teorijske, drugi iz statističke fizike. Jedan se zadnjih godina bavi modifikacijama specijalne relativnosti, a drugi primjenjuje elemente teorije informacije na proučavanje neuralnih sustava.
 
 ---
 
-Ukoliko vas zanima priča iza naziva bloga _Peripatetika_, pročitajte [ovu objavu](./2026_4_naziv_bloga.md).
+Ukoliko vas zanima priča iza naziva bloga _Peripatetika_, pročitajte [ovu objavu](./2026_8_naziv_bloga.md).
 

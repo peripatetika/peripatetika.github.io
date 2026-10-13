@@ -22,12 +22,11 @@
     <footer class="pt-kraj">
       {% if naslovna %}
         <p class="pt-kraj__izvor">
-          Naslovna slika:
-          {% if naslovna.opis %}{{ naslovna.opis }}{% if naslovna.url %}; {% endif %}{% endif %}
+          Naslovna slika: {% if naslovna.opis %}{{ naslovna.opis }}.{% endif %}
           {%- if naslovna.url %}
-            izvor: <a href="{{ naslovna.url }}" target="_blank" rel="noopener">{{ naslovna.izvor or "poveznica" }}</a>
+            Izvor: <a href="{{ naslovna.url }}" target="_blank" rel="noopener">{{ naslovna.izvor or "poveznica" }}</a>.
           {%- elif naslovna.izvor %}
-            izvor: {{ naslovna.izvor }}
+            Izvor: {{ naslovna.izvor }}.
           {%- endif %}
         </p>
       {% endif %}
